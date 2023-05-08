@@ -1,6 +1,6 @@
-#Javascript Notes
+# Javascript Notes
 
-##Pure function
+## Pure function
 
 - In JavaScript, when a function does not mutate objects but just returns a new object, it’s called a pure function.
 - OR
