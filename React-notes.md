@@ -50,3 +50,35 @@ iii) When it comes to react, it's all about components.
 
 - When the state of an object changes in a React application, VDOM gets updated. It then compares its previous state and then updates only those objects in the real DOM instead of updating all of the objects. This makes things move fast, especially when compared to other front-end technologies that have to update each object even if only a single object changes in the web application.
 
+## The process of updating in React
+
+1) The ReactDOM.render() renders the elements on the screen on the first load by creating the real and virtual DOM trees.
+
+2) Any change to an element (such as a key press or button click) leads to a notification sent to the virtual nodes for a state change. If any property of the node is altered, it updates itself.
+
+3) React compares the updated virtual DOM with the real DOM and updates the real DOM accordingly. This process is known as reconciliation. This is done using a heuristic algorithm known as the Diffing Algorithm.
+
+4) The updated real DOM is rendered on the screen.
+
+
+# Folder Strucure while creating npx create-react-app my-app
+
+![Folder Structure In React10](https://user-images.githubusercontent.com/43024084/236744342-fecc2b09-8fff-461f-a8fc-28673c5b3e5c.png)
+
+- node_modules Contains all dependencies required by the app. Main dependencies also listed in package.json
+
+- public Contains static assets including index.html (page template)
+  - index.html
+    - title
+    - fonts
+    - css
+    - favicon
+    - id ="root" our entire app
+    
+- src In simplest form it's the brain of our app. This is where we will do all of our work. src/index.js is the JavaScript entry point.
+- .gitignore Specifies which files source control (Git) should ignore
+- package.json Every Node.js project has a package.json and it contains info about our project, for example list of dependencies and scripts
+- package-lock.json A snapshot of the entire dependency tree
+- README The markdown file where you can share more info about the project for example build instructions and summary
+
+
