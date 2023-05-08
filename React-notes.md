@@ -81,4 +81,5 @@ iii) When it comes to react, it's all about components.
 - package-lock.json A snapshot of the entire dependency tree
 - README The markdown file where you can share more info about the project for example build instructions and summary
 
-
+## Babel
+- Babel is a JavaScript transpiler that converts the newest JavaScript into the good old JavaScript so we can use all the newest features of the JavaScript language. So think things like an spread operator, destructuring and all the other goodies that come with ES6. And behind the scenes babel will turn into ES5, which in turn will make sure that our app runs smoothly in the older browsers as well.
