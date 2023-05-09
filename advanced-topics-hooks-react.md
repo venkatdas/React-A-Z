@@ -9,3 +9,6 @@ After that
 - ```npm install```
 - ```npm run dev```
 
+## What is React Hooks?
+- React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects.
+
