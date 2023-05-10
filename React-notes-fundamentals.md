@@ -83,3 +83,56 @@ iii) When it comes to react, it's all about components.
 
 ## Babel
 - Babel is a JavaScript transpiler that converts the newest JavaScript into the good old JavaScript so we can use all the newest features of the JavaScript language. So think things like an spread operator, destructuring and all the other goodies that come with ES6. And behind the scenes babel will turn into ES5, which in turn will make sure that our app runs smoothly in the older browsers as well.
+
+#### What is JSX and why we are using that?
+
+- JSX stands for JavaScript XML. It's an extension of the JavaScript language based on ES6. It's translated into regular JavaScript at runtime  since browsers cannot read it.
+- JSX allows us to write HTML in React which makes the process of writing HTML in your React apps much easier.
+
+#### JSX Rules
+- A React component name must be capitalized. Component names that do not begin with a capital letter are treated like built-in components.
+- JSX allows you to return only one element from a given component. This is known as a parent element.
+- If you want to return multiple HTML elements, simply wrap all of them in a single <div></div>, <React.fragments><React.fragments/>, <></> or any semnatic tag.
+
+```Javascript
+const App = () => {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <p>Tanishka here!</p>
+    </div>
+  );
+}
+```
+- In JSX, every tag, including self closing tags, must be closed. In case of self closing tags you have to add a slash at the end (for example <img/>, <hr/>, and so on).
+- "class" and "for" are reserved keywords in JavaScript, so use "className" and "forHTML" instead, respectively.
+
+#### What are components are in react?
+
+- Components are independent and reusable blocks of code which work in isolation. The main advantage of components is that they help reduce redundancy.
+- We can classify components into two types: class components and functional components. 
+- Let's look into functional components
+- Functional components are JavaScript functions. There are two ways of creating them. The first is by using the function keyword:
+
+```Javascript
+function MyComponent(props) {
+  return (
+    <div>
+      <p>Hello, World</p>
+      <p>Have a nice day!</p>
+    </div>
+  );
+}
+```
+- You can also use the arrow function syntax to create functional components:
+
+```Javascrpt
+const MyComponent = (props) => {
+  return (
+    <div>
+			<p>Hello, World</p>
+      <p>Have a nice day!</p>
+    </div>
+  );
+}
+```
