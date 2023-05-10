@@ -126,7 +126,7 @@ function MyComponent(props) {
 ```
 - You can also use the arrow function syntax to create functional components:
 
-```Javascrpt
+```Javascript
 const MyComponent = (props) => {
   return (
     <div>
@@ -136,3 +136,19 @@ const MyComponent = (props) => {
   );
 }
 ```
+## What are the props in react?
+
+- Props stand for properties. Props are like function arguments, and you send them into the component as attributes.
+
+```Javascript
+const Book = (props) => {
+  const {bookName, author} = props;
+  return (
+    <div>
+      <h1>Book name : {bookName}</h1>
+      <h2>Author : {author}</h2>
+    </div>
+  );
+};
+```
+
