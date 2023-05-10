@@ -92,8 +92,7 @@ iii) When it comes to react, it's all about components.
 #### JSX Rules
 - A React component name must be capitalized. Component names that do not begin with a capital letter are treated like built-in components.
 - JSX allows you to return only one element from a given component. This is known as a parent element.
-- If you want to return multiple HTML elements, simply wrap all of them in a single <div></div>, 
-- <React.fragments><React.fragments/>, <></> or any semnatic tag.
+- If you want to return multiple HTML elements, simply wrap all of them in a single ```<div></div>,<React.fragments><React.fragments/>, <></>``` or any semnatic tag.
 
 ```Javascript
 const App = () => {
