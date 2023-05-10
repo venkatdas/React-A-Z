@@ -92,7 +92,8 @@ iii) When it comes to react, it's all about components.
 #### JSX Rules
 - A React component name must be capitalized. Component names that do not begin with a capital letter are treated like built-in components.
 - JSX allows you to return only one element from a given component. This is known as a parent element.
-- If you want to return multiple HTML elements, simply wrap all of them in a single <div></div>, <React.fragments><React.fragments/>, <></> or any semnatic tag.
+- If you want to return multiple HTML elements, simply wrap all of them in a single <div></div>, 
+- <React.fragments><React.fragments/>, <></> or any semnatic tag.
 
 ```Javascript
 const App = () => {
@@ -107,7 +108,7 @@ const App = () => {
 - In JSX, every tag, including self closing tags, must be closed. In case of self closing tags you have to add a slash at the end (for example <img/>, <hr/>, and so on).
 - "class" and "for" are reserved keywords in JavaScript, so use "className" and "forHTML" instead, respectively.
 
-#### What are components are in react?
+### What are components  in react?
 
 - Components are independent and reusable blocks of code which work in isolation. The main advantage of components is that they help reduce redundancy.
 - We can classify components into two types: class components and functional components. 
