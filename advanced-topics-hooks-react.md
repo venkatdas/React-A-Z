@@ -32,6 +32,49 @@ After that
 ![image](https://github.com/venkatdas/React-by-john/assets/43024084/c33114dc-6dd0-4230-afd2-773ea69c2ddb)
 
 - When ever you click the button it's keep on increasing the count.
+### useState Array Example:
+![image](https://github.com/venkatdas/React-by-john/assets/43024084/3bb57ac4-df4c-41f6-805a-70796ff3ce20)
+
+- We are importing above data 
+```Javascript
+const UseStateArray = () => {
+  const [people, updatedPeople] = useState(data);
+  const RemoveItem = (id) => {
+    const newItem = people.filter((person) => person.id !== id);
+    updatedPeople(newItem);
+  };
+  const ClearAllItems = () => {
+    updatedPeople([]);
+  };
+  return (
+    <div>
+      {people.map((value) => {
+        const { name, id } = value;
+        return (
+          <div key={id}>
+            <h4>{name}</h4>
+            <button onClick={() => RemoveItem(id)} className="btn">
+              remove
+            </button>
+          </div>
+        );
+      })}
+      <button
+        className="btn"
+        style={{ marginTop: "2rem" }}
+        onClick={ClearAllItems}
+      >
+        Clear Items
+      </button>
+    </div>
+  );
+};
+```
+
+- The Output is 
+- ![image](https://github.com/venkatdas/React-by-john/assets/43024084/56f25fa2-88aa-4682-9f6d-4827ace330d5)
+
+- Whenever if you click on the remove button you remove it from existing content and as well as if you click on the clear all it clears the entire screen.
 
 ### Inatiall Render VS Re-render
 - In a React application, the initial render is the first time that the component tree is rendered to the DOM. It happens when the application first loads, or when the root component is first rendered. This is also known as "mounting" the components.
