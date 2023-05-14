@@ -117,4 +117,5 @@ const UseStateArray = () => {
 - If we have just the plan function or we invoke the function inside of the component yes, it's going to run on INTIAL RENDER AND EVERY RE-RENDER.
 - However, with useEffect we can start controlling  when this functionality runs  .
 - Briefly, with useEffect we provide a callback function which is going to be invoked pretty much after every render, unless we provide here a dependency array. In that case , if we have dependecy array and if it's empty , the functionality inside of the useEffect is going to run once only when the component mounts on the intial render.
-- 
+
+
