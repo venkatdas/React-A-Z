@@ -14,3 +14,9 @@ const Button = props => {
   return <button>{props.message}</button>
 }
 ```
+
+### Fetch:
+
+- Fetch API is the browser API for HTTP requests
+- Default- GET requests, supports other methods as well,
+- It returns a promise
