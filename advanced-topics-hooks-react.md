@@ -94,3 +94,27 @@ const UseStateArray = () => {
 - In React, "batching" refers to the process of grouping multiple state updates into a single update. This can be useful in certain cases because it allows React to optimize the rendering of your components by minimizing the number of DOM updates that it has to perform.
 - By default, React uses a technique called "auto-batching" to group state updates that occur within the same event loop into a single update. This means that if you call the state update function multiple times in a short period of time, React will only perform a single re-render for all of the updates.
 - React 18 ensures that state updates invoked from any location will be batched by default. This will batch state updates, including native event handlers, asynchronous operations, timeouts, and intervals.
+
+### useEffect hook
+
+- useEffect is a hook in React that allows you to perform side effects in function components.There is no need for urban dictionary - basically any work outside of the component. Some examples of side effects are: subscriptions, fetching data, directly updating the DOM, event listeners, timers, etc.
+- It is basically a hook replacement for the "old-school" lifecycle methods componentDidMount, componentDidUpdate and componentWillUnmount.
+
+
+- useEffect hook
+- accepts two arguments (second optional)
+- first argument - cb function
+- second argument - dependency array
+- by default runs on each render (initial and re-render)
+- cb can't return promise (so can't make it async)
+- if dependency array empty [] runs only on initial render
+
+- useEffect will only runs inintial render
+- ![useeffect](https://github.com/venkatdas/React-by-john/assets/43024084/98e69e93-5b01-48b3-aea4-43f5b66a8667)
+![useeffect -output](https://github.com/venkatdas/React-by-john/assets/43024084/14d39eec-17c4-4683-a746-518d257b7424)
+
+- From the above code the main difference between use Effect and normal function is as follows
+- If we have just the plan function or we invoke the function inside of the component yes, it's going to run on INTIAL RENDER AND EVERY RE-RENDER.
+- However, with useEffect we can start controlling  when this functionality runs  .
+- Briefly, with useEffect we provide a callback function which is going to be invoked pretty much after every render, unless we provide here a dependency array. In that case , if we have dependecy array and if it's empty , the functionality inside of the useEffect is going to run once only when the component mounts on the intial render.
+- 
