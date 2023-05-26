@@ -272,4 +272,17 @@ Hooks can only be called from functional components or custom hooks. They should
 - Use Hooks in the Same Order:
 If you have multiple hooks in a component, make sure to use them in the same order on every render. This ensures that the React reconciler can correctly associate the state and updates with the corresponding hooks.
 
+- Don't Call Hooks Conditionally:
+Hooks should always be called unconditionally and not inside conditional statements. React relies on the order and number of hooks being consistent between renders, so conditional calls can lead to unexpected behavior.
+
+- Use Hooks for Each Related Stateful Logic:
+If you have multiple separate stateful logic in a component, use multiple hooks to manage each of them independently. Don't try to combine unrelated stateful logic into a single hook.
+
+- Follow the Naming Convention:
+React hooks are conventionally named with a prefix of "use" (e.g., useState, useEffect, useCustomHook). This naming convention helps differentiate hooks from regular functions and helps with readability and understanding.
+
+- Don't Modify Hooks' Dependencies Array:
+When using hooks like useEffect, ensure that the dependency array is not modified from within the component. Modifying the dependency array can cause unexpected behavior and should be avoided. Instead, provide a stable array of dependencies.
+
+
 
