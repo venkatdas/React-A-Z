@@ -261,3 +261,15 @@ if (!resp.ok) {
 ```
 - From that piece of code you can handle the errors in fetch.
  
+ 
+ ### React Hooks Rules
+ 
+- Only Call Hooks at the Top Level:
+Hooks should only be called at the top level of a functional component or another custom hook. They should not be called inside loops, conditions, or nested functions. This rule ensures that hooks are called consistently on every render and that the order of hooks is preserved.
+- Call Hooks in Functional Components:
+Hooks can only be called from functional components or custom hooks. They should not be called from regular JavaScript functions, class components, or event handlers.
+
+- Use Hooks in the Same Order:
+If you have multiple hooks in a component, make sure to use them in the same order on every render. This ensures that the React reconciler can correctly associate the state and updates with the corresponding hooks.
+
+
