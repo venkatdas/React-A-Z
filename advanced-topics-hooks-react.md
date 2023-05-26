@@ -163,5 +163,8 @@ const DataFetch = () => {
 };
 ```
 
+![image](https://github.com/venkatdas/React-by-john/assets/43024084/899c545e-efbd-4d55-a848-5ffe58ab5324)
+
+
 
 
