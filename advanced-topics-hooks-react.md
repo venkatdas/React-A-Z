@@ -240,4 +240,24 @@ export default MultipleReturnsFetchData;
 - From 189 line useState has twoparams like data, setData..
 - From the fetch value we need to pass the API output to the setData() and for the future purpose call the data wherever it requires.
 
+#### How to handle the Fetch errors 
 
+- Unlike for example Axios, by default, the fetch() API does not consider** HTTP status codes in the 4xx or 5xx range to be errors**. Instead, it considers these status codes to be indicative of a successful request,
+
+#### Example..
+- Consider the above example lke if there is an any error in the URL, If you log the **resp** you can inspect the element 
+
+![image](https://github.com/venkatdas/React-by-john/assets/43024084/77e35563-bbda-47a9-9cd1-bcc442a30002)
+
+- From the above image if you observe you can still got the 200 status response but it can ot handle the 4XX or 5XX series errors.That's the reason we have to add the code 
+
+```javascript
+if (!resp.ok) {
+         setIsError(true);
+           setIsLoading(false);
+           return;
+         }
+
+```
+- From that piece of code you can handle the errors in fetch.
+ 
