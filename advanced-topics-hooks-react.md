@@ -178,4 +178,60 @@ const DataFetch = () => {
 - **Simplified Code:** Conditional rendering can help you simplify your code and make it more readable. By using conditional statements to decide what content should be rendered, you can avoid duplicating code and create more modular components.
 - **Flexibility**: Conditional rendering allows you to create more flexible and customizable components. By rendering different content based on the application state, you can create components that can be used in different contexts and adapt to different user interactions.
 
+#### Multiple returns using conditional rendering examples.
+
+
+```javascript
+
+const MultipleReturnsFetchData = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const resp = await fetch(url);
+        console.log(resp);
+        // if (!resp.ok) {
+        //   setIsError(true);
+        //   setIsLoading(false);
+        //   return;
+        // }
+        const result = await resp.json();
+        setData(result);
+        // setIsLoading();
+        //console.log(result);
+      } catch (error) {
+        setIsError(true);
+        console.log(error);
+      }
+      setIsLoading(false);
+      // console.log(result);
+    };
+    fetchUser();
+  }, []);
+
+  if (isLoading) {
+    return <h2>Loading....</h2>;
+  }
+  if (isError) {
+    return <h2>There was an error....</h2>;
+  }
+
+  return (
+    <div>
+      <img
+        style={{ width: "150px", borderRadius: "25px" }}
+        src={data.avatar_url}
+        alt={data.name}
+      />
+      <h2>Fetch Data</h2>
+      <h2>{data.name}</h2>
+      <h4>works at {data.company}</h4>
+      <p>{data.bio}</p>
+    </div>
+  );
+};
+export default MultipleReturnsFetchData;
+```
 
