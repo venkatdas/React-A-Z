@@ -235,3 +235,8 @@ const MultipleReturnsFetchData = () => {
 export default MultipleReturnsFetchData;
 ```
 
+- From the above code we are getting the ![image](https://github.com/venkatdas/React-by-john/assets/43024084/6673b082-f730-4cbe-ac97-bcb0bc1a8ff0)
+- From 189 line useState has twoparams like data, setData..
+- From the fetch value we need to pass the API output to the setData() and for the future purpose call the data wherever it requires.
+
+
