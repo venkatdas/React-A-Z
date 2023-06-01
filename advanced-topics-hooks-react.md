@@ -351,6 +351,17 @@ const ControlledInputs = () => {
 export default ControlledInputs;
 
 ```
+![image](https://github.com/venkatdas/React-by-john/assets/43024084/8ffdd993-6360-411c-b803-8e7a591618d3)
+
+- Let's understand the code from above example.
+- onChange event we can write as different below
+
+```javascript
+const  handleChange = (event) => {
+		setName(event.target.value);
+	};
+  onChange={handleChange} // it is same as line no 342
+```
 
 
 
