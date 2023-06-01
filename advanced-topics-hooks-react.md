@@ -298,7 +298,7 @@ When using hooks like useEffect, ensure that the dependency array is not modifie
 
 - To create a controlled component, you need to use the value prop to set the value of form elements and the onChange event to handle changes made to the value.
 
-```react
+```javascript
 import { useState } from "react";
 
 const ControlledInputs = () => {
