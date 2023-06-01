@@ -285,4 +285,74 @@ React hooks are conventionally named with a prefix of "use" (e.g., useState, use
 When using hooks like useEffect, ensure that the dependency array is not modified from within the component. Modifying the dependency array can cause unexpected behavior and should be avoided. Instead, provide a stable array of dependencies.
 
 
+### Forms in react
+- There are two ways to handle the data
+- Controlled Components: In this approach, form data is handled by React through the use of hooks such as the useState hook.
+- Uncontrolled Components: Form data is handled by the Document Object Model (DOM) rather than by React. The DOM maintains the state of form data and updates it based on user input.
+
+- Let's focus on the **controlled Forms**
+
+- In React, a controlled component is a component where form elements derive their value from a React state.
+
+- When a component is controlled, the value of form elements is stored in a state, and any changes made to the value are immediately reflected in the state.
+
+- To create a controlled component, you need to use the value prop to set the value of form elements and the onChange event to handle changes made to the value.
+
+```react
+import { useState } from "react";
+
+const ControlledInputs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  // const handleNameClick = (e) => {
+  //   // const name = e.target.name;
+  //   // const value = e.target.value
+  //   setName(e.target.value);
+  // };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(name, email);
+  };
+  return (
+    <form className="form" onSubmit={handleClick}>
+      <h4>controlled inputs</h4>
+      <div className="form-row">
+        <label htmlFor="name" className="form-label">
+          name
+        </label>
+        <input
+          type="text"
+          className="form-input"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="form-row">
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-input"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <button type="submit" className="btn btn-block">
+        submit
+      </button>
+    </form>
+  );
+};
+export default ControlledInputs;
+
+```
+
+
+
+
 
