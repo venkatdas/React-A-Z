@@ -159,3 +159,96 @@ const Book = (props) => {
 - Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and pass it down to child components as their props
 
 
+```
+import { RESTDataSource } from '@apollo/datasource-rest';
+import { handleGraphqlError } from '../../utils/graphqlError.js';
+import { ERROR_DATASOURCES } from '../../utils/constants.js';
+
+import {
+  CSO_ACCOUNT_QUERY,
+  CSO_DETAILS_QUERY,
+  CSO_GROUP_QUERY,
+  CSO_NAME_QUERY
+} from '../Teradata/Alerts/queries.js';
+
+class getCSOData extends RESTDataSource {
+  baseURL =
+    'https://gehealthcare-amer--uat.sandbox.my.salesforce.com/services/data/v39.0/query/?q=';
+
+  constructor(options) {
+    super(options);
+    this.token = options.token;
+  }
+
+  willSendRequest(_path, request) {
+    request.headers['Authorization'] = this.token;
+  }
+
+  async getAPIData(queryURL) {
+    const apiURL = `${this.baseURL}${queryURL}`;
+    console.log('apiURL', apiURL);
+    console.log('typeof apiURL', typeof apiURL);
+    try {
+      const data = await this.get(apiURL);
+      console.log('data', data);
+      return data;
+    } catch (error) {
+      return handleGraphqlError(error, ERROR_DATASOURCES.CSODATA);
+    }
+  }
+
+  async getCSOData({ type, list }) {
+    if (type === 'CSO_Account') {
+      const param = list.join(',');
+      const queryURL = CSO_ACCOUNT_QUERY(param);
+      await this.getAPIData(queryURL);
+    } else if (type === 'CSO_Group') {
+      const queryURL = CSO_GROUP_QUERY(list);
+      await this.getAPIData(queryURL);
+    } else if (type === 'CSO_Name') {
+      const queryURL = CSO_NAME_QUERY(list);
+      await this.getAPIData(queryURL);
+    } else {
+      const queryURL = CSO_DETAILS_QUERY(list);
+      await this.getAPIData(queryURL);
+    }
+  }
+}
+
+export default getCSOData;
+
+
+
+//resolver
+import { ERROR_DATASOURCES, STATUS_CODES } from '../../utils/constants.js';
+import { handleCommonError } from '../../utils/graphqlError.js';
+
+export const getCSODataAPIResolver = {
+  async getCSOData(_, { type, list }, { dataSources }) {
+    try {
+      return dataSources.getCSO.getCSOData({ type, list });
+    } catch (error) {
+      return handleCommonError({
+        message: STATUS_CODES.INVALID_PAYLOAD,
+        status: 400,
+        description: error?.message,
+        source: ERROR_DATASOURCES.CSODATA
+      });
+    }
+  }
+};
+
+
+export const getCSODataAPISchema = `
+type GetCSOResponse {
+  totalSize: Int
+  done: Boolean
+  records: [String]
+}
+`;
+
+export const getCSODataQueries = `
+getCSOData(type: String, list: [String]): GetCSOResponse
+`;
+```
+
