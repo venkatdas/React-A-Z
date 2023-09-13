@@ -158,4 +158,16 @@ const Book = (props) => {
 - State is like a component’s memory. It lets a component keep track of some information and change it in response to interactions. For example, a Button might keep track of isHovered state.
 - Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and pass it down to child components as their props
 
+#### Example for prop with the image of the code
+
+![image](https://github.com/venkatdas/React-by-john/assets/43024084/e345300d-901f-4174-bd8c-17668ec5a04b)
+
+- From the above image what we can conclude..
+- We creatd on Image.jsx and defined basic boiler plate code from that 
+- INtially we defined basic attributes which needs for image , from that image we passed it for as prop to the image element
+- React data flow is one way direction that is from parent to child ( no other way ).
+- this link descibes the propes in react
+- 
+(https://www.freecodecamp.org/news/how-to-use-props-in-reactjs/)
+
 
