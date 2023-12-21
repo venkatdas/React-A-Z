@@ -15,8 +15,10 @@ const Button = props => {
 }
 ```
 
-### Fetch:
+### Fetch: (Axios API)
 
 - Fetch API is the browser API for HTTP requests
 - Default- GET requests, supports other methods as well,
 - It returns a promise
+- response data is located in the data property
+- error in error.response
