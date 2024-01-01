@@ -217,4 +217,6 @@ Explanation
 6) Child componentDidMount will be called
 7) Finallly parent componentDidMount will be called.
 
-This is the Mounting Phase
+This is about  the Mounting Phase.
+
+**The Purpose of the componentDidMount is to make the API calls.**
