@@ -221,4 +221,5 @@ This is about  the Mounting Phase.
 
 **The Purpose of the componentDidMount is to make the API calls.** But How
 Here is the Explanation
-Page Loading -> Render the UI -> Make an API call -> Re- render the component.
+
+- Page Loading -> Render the UI -> Make an API call -> Re- render the component.
