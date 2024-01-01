@@ -155,8 +155,6 @@ class About extends React.Component {
     );
   }
 }
-
-
 export default About;
 ```
 - Child Class based component
