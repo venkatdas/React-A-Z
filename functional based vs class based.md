@@ -238,3 +238,8 @@ Render phase is like it will take constructor and render once all nested compone
 
 
 ![image](https://github.com/venkatdas/React-A-Z/assets/43024084/6631bd92-a408-43c3-be67-90a293ef30f9)
+
+
+## Now Let's see How Update cycle works
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/f5b80adc-3aac-4b97-b242-b8373c05eebc)
