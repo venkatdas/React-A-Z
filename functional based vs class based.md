@@ -18,6 +18,7 @@ export default User
 - Where as Class Based components  which needs render method that returns piece of JSX code
 
 ```Javascript
+import React from "react"
 class UserClass extends React.Component{
     render(){
         <div className="user-card">
@@ -27,6 +28,8 @@ class UserClass extends React.Component{
     }
 
 }
+export default UserClass
 
 ```
 - React.Component is a class which comes fromm the ` import React from "react"`
+- To use the class ased component in other Components just use `<UseClass/>`
