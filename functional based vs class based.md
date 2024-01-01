@@ -21,10 +21,14 @@ export default User
 import React from "react"
 class UserClass extends React.Component{
     render(){
-        <div className="user-card">
+return (
+ <div className="user-card">
           <h2>Name: Das</h2>
           <h2>Location: HYD</h2>
         </div>
+
+)
+       
     }
 
 }
