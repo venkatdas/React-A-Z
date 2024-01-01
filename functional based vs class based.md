@@ -125,3 +125,94 @@ export default UserClass;
 - Never update state variables directly
 - 'this.state' is object it can contain any number of state variables , even if you dont define all state variables in setState fucntion it will necessary variables that you are declared in the setState fucntion
 - Whenever if we click on the button react will trigger the reconsilation algorithm Then it will render the component.
+
+# Life Cycle Methods of Class based component
+** Meta Data
+- We have two Class based components
+- Parent and Child and let's write the code and see how the those components will be rendered on the screen
+
+  ```Javascript
+// About Parent class
+import User from "./User";
+import UserClass from "./UserClass";
+import React from "react";
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("Parent Constructor");
+  }
+
+  componentDidMount() {
+    console.log("Parent Component Did Mount");
+  }
+  render() {
+    console.log("Parent Render");
+    return (
+      <div>
+        <h1>This is regarding the About Component</h1>
+        <UserClass name="venkatdas" location="USA" />
+      </div>
+    );
+  }
+}
+
+
+export default About;
+```
+- Child Class based component
+
+```Javascript
+import React from "react";
+
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+    console.log("Child Constructor called");
+  }
+
+  componentDidMount(){
+    console.log("Child Component Did Mount");
+  }
+  render() {
+    const { name, location } = this.props;
+
+    console.log("Child Render called");
+    return (
+      <div className="user-card">
+        <h2>Count:{this.state.count}</h2>
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          Class Increase
+        </button>
+        <h2>Name: class {name}</h2>
+        <h2>Location: {location}</h2>
+      </div>
+    );
+  }
+}
+
+export default UserClass;
+```
+
+From above code snipperrs we will geet the output as follows and This is the relationship between parent and child class based components of life cycle.
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/4a02dd89-5c5d-45d4-a43c-7223e31c14f1)
+
+Explanation
+1) Parent constructor will be called
+2)Parent render Method will be called
+3) Noew It's looking for any child components inside the parent If it is,
+4) Then, Child constructor will be called
+5) Child render will be called After that if child component has successfully loaded then
+6) Child componentDidMount will be called
+7) Finallly parent componentDidMount will be called.
+
+This is the Mounting Phase
