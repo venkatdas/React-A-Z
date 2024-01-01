@@ -126,12 +126,12 @@ export default UserClass;
 - 'this.state' is object it can contain any number of state variables , even if you dont define all state variables in setState fucntion it will necessary variables that you are declared in the setState fucntion
 - Whenever if we click on the button react will trigger the reconsilation algorithm Then it will render the component.
 
-# Life Cycle Methods of Class based component
-** Meta Data
+### Life Cycle Methods of Class based component
+-  Meta Data
 - We have two Class based components
 - Parent and Child and let's write the code and see how the those components will be rendered on the screen
 
-  ```Javascript
+```Javascript
 // About Parent class
 import User from "./User";
 import UserClass from "./UserClass";
@@ -157,7 +157,11 @@ class About extends React.Component {
 }
 export default About;
 ```
+
+
 - Child Class based component
+
+
 
 ```Javascript
 import React from "react";
