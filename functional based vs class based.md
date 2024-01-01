@@ -29,3 +29,4 @@ class UserClass extends React.Component{
 }
 
 ```
+- React.Component is a class which comes fromm the ` import React from "react"`
