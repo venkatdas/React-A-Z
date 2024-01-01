@@ -334,9 +334,17 @@ This is the live output for the update cycle
 3) After that if will check for child components if it is then,
 4) Child render component called and it will load local state variable data as known as dummy data
 5) Child componentDidMount is called
-6) ONce it is successfully completed the Parent ComponentDidMount is called
-7) After that ChildComponent willhave API data and it will update the live API from the github after that again it wil re-render the **child Render **
-8) Finally componentDidUpdate called
+6) After the child component is mounted, the parent's "Parent Component Did Mount" is logged, indicating that the About component has finished mounting all its content, including its child components, onto the DOM.
+7) 
+8) Child ComponentDidMount: The componentDidMount lifecycle method of the child component is triggered after the child is mounted on the DOM. If there's an asynchronous operation (like data fetching), it starts but does not necessarily finish immediately. The actual operation is non-blocking, meaning it is set in motion and then control is immediately returned to the JavaScript runtime.
+9) 
+10) Parent ComponentDidMount: While the asynchronous operation is pending (the data is still being fetched), the React framework continues its lifecycle operations and calls the parent's componentDidMount. At this point, React considers the parent component to be mounted, even though the child's asynchronous data fetching has not yet completed.
+
+
+
+11) ONce it is successfully completed the Parent ComponentDidMount is called
+12) After that ChildComponent willhave API data and it will update the live API from the github after that again it wil re-render the **child Render **
+13) Finally componentDidUpdate called
 ![image](https://github.com/venkatdas/React-A-Z/assets/43024084/94128247-c1df-4e92-9500-691d3db88c4a)
 ## componentWillUnmount:
 
