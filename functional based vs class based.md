@@ -242,5 +242,124 @@ Render phase is like it will take constructor and render once all nested compone
 
 ## Now Let's see How Update cycle works
 
+- To update the lifecycle componentDidMount where we can write the API call to fetch data
+
+```Javascript
+import User from "./User";
+import UserClass from "./UserClass";
+import React from "react";
+class About extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log("Parent Constructor");
+  }
+
+  componentDidMount() {
+    console.log( "Parent Component Did Mount");
+  }
+  render() {
+    console.log("Parent Render");
+    return (
+      <div>
+        <h1>This is regarding the About Component</h1>
+        <UserClass />
+      </div>
+    );
+  }
+}
+
+
+export default About;
+```
+- Above code is a parent code
+
+- Now we are writing the code to fetch data from api in child component
+
+```Javascript
+import React from "react";
+
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: {
+        name: "dummy",
+        location: "Dummy location",
+        avatar_url:"",
+      },
+    };
+    console.log("  Child Constructor called");
+  }
+
+  async componentDidMount() {
+    console.log("  Child Component Did Mount");
+    const data = await fetch("https://api.github.com/users/venkatdas");
+    const json = await data.json();
+    console.log(json);
+
+    this.setState({
+      userInfo: json,
+    });
+  }
+  componentDidUpdate() {
+    console.log("Component did update");
+  }
+  render() {
+    const { name, location,avatar_url } = this.state.userInfo;
+    // debugger;
+    console.log("  Child Render called");
+    return (
+      <div className="user-card">
+        <h2>Name:{name}</h2>
+        <h2>Location: {location}</h2>
+        <img src={avatar_url}/>
+        <h2></h2>
+      </div>
+    );
+  }
+}
+
+export default UserClass;
+
+```
+
+This is the live output for the update cycle
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/482c4641-76a8-4a84-97a2-f612be677e39)
+
+
+- From above code and image we can validate the conclusions of as follows
+
+1) We are in the parent component so **Parent constructor is called**
+2) Then Parent render is called
+3) After that if will check for child components if it is then,
+4) Child render component called and it will load local state variable data as known as dummy data
+5) Child componentDidMount is called
+6) ONce it is successfully completed the Parent ComponentDidMount is called
+7) After that ChildComponent willhave API data and it will update the live API from the github after that again it wil re-render the **child Render **
+8) Finally componentDidUpdate called
 ![image](https://github.com/venkatdas/React-A-Z/assets/43024084/94128247-c1df-4e92-9500-691d3db88c4a)
+## componentWillUnmount:
+
+- This will call when component is detached or disabled from the DOM or UI let's say example from the same code we can add the below snippet after the componentDidUpdate
+
+```Javascript
+  componentWillUnmount(){
+    console.log("Compoonent will unmount is called");
+  }
+```
+
+- The component is unmounted when you navigating to other external pages and it will automatically unmounted and this is the final phase of life cycle methods.
+
+Snippet
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/c8b60a7b-94b3-4625-b264-d9ac90b06774)
+
+
+
+
+
+
+
+
+
 
