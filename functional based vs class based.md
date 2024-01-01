@@ -17,6 +17,15 @@ export default User
 ```
 - Where as Class Based components  which needs render method that returns piece of JSX code
 
-```
+``` react
+class UserClass extends React.Component{
+    render(){
+        <div className="user-card">
+          <h2>Name: Das</h2>
+          <h2>Location: HYD</h2>
+        </div>
+    }
+
+}
 
 ```
