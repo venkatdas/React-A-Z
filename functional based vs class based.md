@@ -224,5 +224,17 @@ Here is the Explanation
 
 - Page Loading -> Render the UI -> Make an API call -> Re- render the component.
 
+**
+- When There is a more than one child components in a parent component the Life cycle method will work as **
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/fe3a5959-50cd-4521-9956-7d744e30ed19)
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/840c2eaa-0dbf-44b6-8adc-4b045435fa2c)
+
+- From above two images we can considered as
+Render phase is like it will take constructor and render once all nested components loaded React optimizes the rendering 
+- The nested child are batching to Dom and then reloaded onto the screen.
+
+
 
 ![image](https://github.com/venkatdas/React-A-Z/assets/43024084/6631bd92-a408-43c3-be67-90a293ef30f9)
