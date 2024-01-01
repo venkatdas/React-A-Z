@@ -223,3 +223,6 @@ This is about  the Mounting Phase.
 Here is the Explanation
 
 - Page Loading -> Render the UI -> Make an API call -> Re- render the component.
+
+
+![image](https://github.com/venkatdas/React-A-Z/assets/43024084/6631bd92-a408-43c3-be67-90a293ef30f9)
